@@ -31,7 +31,7 @@ with elements which implement [Comparable](https://docs.oracle.com/en/java/javas
 ## Tests
 
 This projects has tests for all public methods of MyArrayList class and for four scenario of MyQuicSort class:
-* Sort random ArrayList<Integer>
-* Sort increasing ArrayList<Integer>
-* Sort decreasing ArrayList<Integer>
-* Sort raandom MyArrayList<In
+* Sort random ArrayList\<Integer\>
+* Sort increasing ArrayList\<Integer\>
+* Sort decreasing ArrayList\<Integer\>
+* Sort raandom MyArrayList\<Integer\>
