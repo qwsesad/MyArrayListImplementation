@@ -2,6 +2,7 @@ package test;
 
 import main.MyArrayList;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -52,6 +53,19 @@ public class MyArrayListTest {
 
 
         Assert.assertEquals(Arrays.toString(verificationArray), testArray.toString());
+    }
+
+    @Ignore
+    @Test
+    public void overflowSizeVariable()
+    {
+        testArray = new MyArrayList<>();
+        verificationArray = new int[]{10, 0, 12 ,1, 11 ,2};
+
+        Assert.assertThrows(ArithmeticException.class, () -> {
+            for (long i = 0; i < Long.MAX_VALUE; i++)
+                testArray.add(0);
+        });
     }
 
     @Test

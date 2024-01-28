@@ -81,7 +81,7 @@ public class MyArrayList<E> extends AbstractList<E>
 
 
     @Override
-    public boolean add(Object o)
+    public boolean add(Object o) throws ArithmeticException
     {
         if (array.length==size)
             expand();
@@ -91,13 +91,13 @@ public class MyArrayList<E> extends AbstractList<E>
             size++;
         }
         else
-            throw new StackOverflowError();
+            throw new ArithmeticException("Size overflow");
         return true;
     }
 
 
     @Override
-    public void add(int index, Object o)
+    public void add(int index, Object o) throws ArithmeticException
     {
         Objects.checkIndex(index, size);
         if (array.length==size)
@@ -110,6 +110,8 @@ public class MyArrayList<E> extends AbstractList<E>
             array = buffer;
             size++;
         }
+        else
+            throw new ArithmeticException("Size overflow");
     }
 
 
