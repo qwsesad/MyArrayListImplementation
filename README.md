@@ -34,4 +34,4 @@ This projects has tests for all public methods of MyArrayList class and for four
 * Sort random ArrayList\<Integer\>
 * Sort increasing ArrayList\<Integer\>
 * Sort decreasing ArrayList\<Integer\>
-* Sort raandom MyArrayList\<Integer\>
+* Sort random MyArrayList\<Integer\>
