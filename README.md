@@ -28,7 +28,7 @@ This class is an implementation of the [Hoare scheme quick sort algorithm](https
 This class supports any modifiable implementation of the [List](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html#indexOf(java.lang.Object)) interface 
 with elements which implement [Comparable](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Comparable.html) interface.
 
-##Tests
+## Tests
 
 This projects has tests for all public methods of MyArrayList class and for four scenario of MyQuicSort class:
 * Sort random ArrayList<Integer>
