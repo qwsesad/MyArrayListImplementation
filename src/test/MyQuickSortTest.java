@@ -5,10 +5,9 @@ import main.MyQuickSort;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.security.PublicKey;
+
 import java.util.AbstractList;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
 public class MyQuickSortTest {
 
@@ -39,7 +38,7 @@ public class MyQuickSortTest {
         testArray = new ArrayList<>();
         int value = random.nextInt(1000);
         for (int i = 0; i < 10; i++)
-        {;
+        {
             verificationArray.add(value + i);
             testArray.add(value + i);
         }
@@ -56,7 +55,7 @@ public class MyQuickSortTest {
         testArray = new ArrayList<>();
         int value = random.nextInt(1000);
         for (int i = 0; i < 10; i++)
-        {;
+        {
             verificationArray.add(value - i);
             testArray.add(value - i);
         }

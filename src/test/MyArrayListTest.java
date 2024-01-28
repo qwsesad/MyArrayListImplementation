@@ -16,7 +16,7 @@ public class MyArrayListTest {
     @Test
     public void createObjectWithWrongCapacity()
     {
-        Assert.assertThrows(IllegalArgumentException.class, () -> {testArray = new MyArrayList<>(-1);});
+        Assert.assertThrows(IllegalArgumentException.class, () -> testArray = new MyArrayList<>(-1));
     }
 
     @Test
@@ -58,7 +58,7 @@ public class MyArrayListTest {
     public void addWithWrongIndex()
     {
         testArray = new MyArrayList<>(6);
-        Assert.assertThrows(IndexOutOfBoundsException.class, () -> {testArray.add(-1, 1);});
+        Assert.assertThrows(IndexOutOfBoundsException.class, () -> testArray.add(-1, 1));
     }
 
     @Test
