@@ -1,5 +1,5 @@
 # MyArrayListImplementation
-A project for the Aston Java intensive. It is a variant of the implementation of ArrayList and quick sorting according to the Hoare scheme.
+A project for the Aston's Java-trainee. It is a variant of the implementation of ArrayList and quick sorting according to the Hoare scheme.
 
 ## MyArrayList
 
