@@ -54,7 +54,7 @@ public class MyArrayList<E> extends AbstractList<E>
     @SuppressWarnings("unchecked")
     public E get(int index)
     {
-        Objects.checkIndex(index, size);
+        // это лишнее, так как если индекс вываливается из массива то же исключение прокинет сам массив
         return (E) array[index];
     }
 
@@ -68,14 +68,16 @@ public class MyArrayList<E> extends AbstractList<E>
 
     private void expand()
     {
-        int DEFAULT_SIZE = 10;
-        if (array == EMPTY)
+        int DEFAULT_SIZE = 10; // DEFAULT_SIZE названия в апперкейсе только для констант
+        if (array == EMPTY) {
             array = new Object[DEFAULT_SIZE];
+        }
         else
         {
             int newCapacity = Math.max(size + 1, size >> 1);
-            if (newCapacity > size)
+            if (newCapacity > size) {
                 array = Arrays.copyOf(array, newCapacity);
+            }
         }
     }
 
@@ -83,15 +85,12 @@ public class MyArrayList<E> extends AbstractList<E>
     @Override
     public boolean add(Object o) throws ArithmeticException
     {
-        if (array.length==size)
+        if (array.length==size) {
             expand();
-        if (array.length > size)
-        {
-            array[size] = o;
-            size++;
         }
-        else
-            throw new ArithmeticException("Size overflow");
+        // исключение никогда не прокинится
+        array[size] = o;
+        size++;
         return true;
     }
 
@@ -102,31 +101,23 @@ public class MyArrayList<E> extends AbstractList<E>
         Objects.checkIndex(index, size);
         if (array.length==size)
             expand();
-        if (array.length > size) {
-            Object[] buffer = new Object[array.length];
-            System.arraycopy(array, 0, buffer, 0, index);
-            buffer[index] = o;
-            System.arraycopy(array, index, buffer, index + 1, size - index);
-            array = buffer;
-            size++;
-        }
-        else
-            throw new ArithmeticException("Size overflow");
+        Object[] buffer = new Object[array.length];
+        System.arraycopy(array, 0, buffer, 0, index);
+        buffer[index] = o;
+        System.arraycopy(array, index, buffer, index + 1, size - index);
+        array = buffer;
+        size++;
     }
 
 
+    // по контракту из AbstractList если o == null - прокидывается NPE
+    // Нарушение принципа Барбары Лисков
     @Override
     public int indexOf(Object o) {
-        if (o == null)
-        {
-            for (int i = 0; i < size; i++)
-            {
-                if (array[i] == null)
-                    return i;
-            }
+        if (o == null) {
+            throw new NullPointerException("argument is null");
         }
-        else
-        {
+        else {
             for (int i = 0; i < size; i++)
             {
                 if(o.equals(array[i]))
