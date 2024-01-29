@@ -8,6 +8,7 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.Random;
 
+// Тесты в целом хорошие и аккуратные, почитай про конвенции нейминга тестов, ты выбрал не самую популярную
 public class MyArrayListTest {
 
     int[] verificationArray;
@@ -45,7 +46,7 @@ public class MyArrayListTest {
         //Insert into start point
         testArray.add(0, 10);
 
-        //Insert into end point
+        //Insert into end point // такие коментарии ни к чему) И так же понятно
         testArray.add(3, 11);
 
         //Insert into middle of array

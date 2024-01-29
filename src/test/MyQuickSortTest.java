@@ -37,7 +37,7 @@ public class MyQuickSortTest {
         verificationArray = new ArrayList<>();
         testArray = new ArrayList<>();
         int value = random.nextInt(1000);
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 10; i++) // вот этот блок кода с запонлением тестовых данных лучше вынести в @BeforeEach метод, потому что много дубликатов кода
         {
             verificationArray.add(value + i);
             testArray.add(value + i);
